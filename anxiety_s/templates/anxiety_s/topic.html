@@ -1,0 +1,28 @@
+{% extends 'anxiety_s/base.html' %}
+
+{% block page_header %}
+  <h3>{{ topic }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+  <p>
+    <a href="{% url 'anxiety_s:new_entry' topic.id %}">添加新内容</a>
+  </p>
+
+  <ul>
+  {% for entry in entries %}
+    <div class="card mb-3">
+      <h4 class="card-header">
+        {{ entry.date_added|date:'M d, Y H:i' }}
+        <small><a href="{% url 'anxiety_s:edit_entry' entry.id %}">
+            edit entry</a></small>
+      </h4>
+      <div class="card-body">
+        {{ entry.text|linebreaks }}
+      </div>
+    </div>
+  {% empty %}
+    <p>您还没有添加内容</p>
+  {% endfor %}
+
+{% endblock content %}

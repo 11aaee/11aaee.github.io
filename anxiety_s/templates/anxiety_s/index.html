@@ -1,0 +1,16 @@
+{% extends "anxiety_s/base.html" %}
+
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">寻NIan引导</h1>
+
+    <p class="lead">---记录几个眼睛看到的、带来积极体验的画面</p>
+    <p class="lead">---先不急着动笔，你可以带着这个任务，花时间观察身边的人事物</p>
+    <p class="lead">---搜集好素材后，再完成书写</p>
+    <p class="lead">---书写时，写下画面带给你的情绪感受，或者任何体验</p>
+    <p class="lead">---当你准备好记录后，请点击情绪笔记</p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'anxiety_s:topics'%}"
+    role="button">情绪笔记</a></li>
+  </div>
+{% endblock page_header %}
